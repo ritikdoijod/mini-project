@@ -27,12 +27,30 @@ function PaletteFromImage () {
                         "Unable to get image"
                     ) : (
                         <div className="colorPalette" >
-                            <div style={{width: 85, height: 120, backgroundColor: data.darkVibrant}}></div>
-                            <div style={{width: 85, height: 120, backgroundColor: data.darkMuted}}></div>
-                            <div style={{width: 85, height: 120, backgroundColor: data.vibrant}}></div>
-                            <div style={{width: 85, height: 120, backgroundColor: data.muted}}></div>
-                            <div style={{width: 85, height: 120, backgroundColor: data.lightMuted}}></div>
-                            <div style={{width: 85, height: 120, backgroundColor: data.lightVibrant}}></div>
+                            <div>
+                                <div style={{width: 85, height: 120, backgroundColor: data.darkVibrant}}></div>
+                                <div><label>{data.darkVibrant}</label></div>
+                            </div>
+                            <div>
+                                <div style={{width: 85, height: 120, backgroundColor: data.darkMuted}}></div>
+                                <div><label>{data.darkMuted}</label></div>
+                            </div>
+                            <div>
+                                <div style={{width: 85, height: 120, backgroundColor: data.vibrant}}></div>
+                                <div><label>{data.vibrant}</label></div>
+                            </div>
+                            <div>
+                                <div style={{width: 85, height: 120, backgroundColor: data.muted}}></div>
+                                <div><label>{data.muted}</label></div>
+                            </div>
+                            <div>
+                                <div style={{width: 85, height: 120, backgroundColor: data.lightMuted}}></div>
+                                <div><label>{data.lightMuted}</label></div>
+                            </div>
+                            <div>
+                                <div style={{width: 85, height: 120, backgroundColor: data.lightVibrant}}></div>
+                                <div><label>{data.lightVibrant}</label></div>
+                            </div>
                         </div>
                     )}
                 </div>
