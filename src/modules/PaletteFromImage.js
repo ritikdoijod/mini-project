@@ -16,10 +16,10 @@ function PaletteFromImage () {
     return (
         <div className="App">
             <div className="App-header">
-                <div>
+                <input type="file" name="image-upload" id="inputImage" accept="image/*" onChange={imageHandler} />
+                <div className="ImageView">
                     <img src={imageFile} alt="" width={400} />
                 </div>
-                <input type="file" name="image-upload" id="inputImage" accept="image/*" onChange={imageHandler} />
                 <div style={{fontsize: 18, marginTop: 25, marginBottom: 50}} >
                     {loading ? (
                         "Loading..."
@@ -29,27 +29,27 @@ function PaletteFromImage () {
                         <div className="colorPalette" >
                             <div>
                                 <div style={{width: 85, height: 120, backgroundColor: data.darkVibrant}}></div>
-                                <div><label>{data.darkVibrant}</label></div>
+                                <div className="ColorText"><label>{data.darkVibrant}</label></div>
                             </div>
                             <div>
                                 <div style={{width: 85, height: 120, backgroundColor: data.darkMuted}}></div>
-                                <div><label>{data.darkMuted}</label></div>
+                                <div className="ColorText"><label>{data.darkMuted}</label></div>
                             </div>
                             <div>
                                 <div style={{width: 85, height: 120, backgroundColor: data.vibrant}}></div>
-                                <div><label>{data.vibrant}</label></div>
+                                <div className="ColorText"><label>{data.vibrant}</label></div>
                             </div>
                             <div>
                                 <div style={{width: 85, height: 120, backgroundColor: data.muted}}></div>
-                                <div><label>{data.muted}</label></div>
+                                <div className="ColorText"><label>{data.muted}</label></div>
                             </div>
                             <div>
                                 <div style={{width: 85, height: 120, backgroundColor: data.lightMuted}}></div>
-                                <div><label>{data.lightMuted}</label></div>
+                                <div className="ColorText"><label>{data.lightMuted}</label></div>
                             </div>
                             <div>
                                 <div style={{width: 85, height: 120, backgroundColor: data.lightVibrant}}></div>
-                                <div><label>{data.lightVibrant}</label></div>
+                                <div className="ColorText"><label>{data.lightVibrant}</label></div>
                             </div>
                         </div>
                     )}
