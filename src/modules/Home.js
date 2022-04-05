@@ -1,19 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./../App.css"
+import "./../assets/styles/Home.css"
+import PaletteImage from "./../assets/images/ColorPalette.png"
 
 function Home () {
+
+    const navigate = useNavigate();
+
     return(
         <div className="Container">
             <div className="Header">
                 <label>Color Palette Application</label>
             </div>
             <div className="DisplayBox">
-                <div className="Links">
-                    <div className="Link"><Link to="/trendingpalettes" className="RedirectLink">Trending Color Palettes</Link></div>
-                    <div className="Link"><Link to="/palettefromimage" className="RedirectLink">Generate Color Palette From Image</Link></div>
-                    <div className="Link"><Link to="/palettefromcolors" className="RedirectLink">Generate Color Palette From Colors</Link></div>
+
+{/******************** navigation buttons ******************/}
+
+                <div className="PaletteImage">
+                    <img src={PaletteImage} />
                 </div>
+                <div className="PaletteShadow">
+                </div>
+                <div className="NavigateButtons">
+                    <button className="Button" onClick={() => navigate("/trendingpalettes")}>Trending Color Palettes</button>
+                    <button className="Button" onClick={() => navigate("/palettefromimage")}>Generate Color Palette From Image</button>
+                    <button className="Button" onClick={() => navigate("/palettefromcolors")}>Generate Color Palette From Colors</button>
+                </div>
+                
+
             </div>
         </div>
     )

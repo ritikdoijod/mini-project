@@ -1,0 +1,110 @@
+* {
+    --backgroundColor0: #e9ecef;
+    --backgroundColor1: rgba(255, 255, 255, 0.5);
+    
+    /* --backgroundColor1: #ffffff; */
+    --color0: #212529;
+    --color1: #343a40;
+    --color2: #495057;
+    --color3: #6c757d;
+    --color: #f8f9fa;
+}
+
+.Container {
+    min-height: 100vh;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.1)), url("./../images/palettesbg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.Header {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(50px);
+    text-align: left;
+    padding: 10px;
+    color: #343a40;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.DisplayBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color);
+    width: 45vh;
+    height: 65vh;
+    border-radius: 5rem 40rem 4rem 4rem;
+    text-align: center;
+}
+
+.NavigateButtons {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 6rem;
+}
+
+.Button {
+    /* background-color: var(--backgroundColor1); */
+    background-color: #f0f0f0;
+    color: var(--color2);
+    /* color: #dee2e6; */
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.8rem;
+    width: 21rem;
+    height: 3rem;
+    font-size: large;
+    font-weight: 900;
+    border-radius: 0.75rem;
+}
+
+.DisplayBox {
+    background: rgba(255, 255, 255, 0.54);
+    backdrop-filter: blur(12px);
+}
+
+.PaletteImage {
+    position: relative;
+    bottom: 4rem;
+    left: 1rem;
+    z-index: 5;
+}
+
+.PaletteImage img {
+    width: 350px;
+    filter: drop-shadow(10px 50px 17px #0008148f);
+}
+
+.PaletteImage img:hover {
+    width: 355px;
+    transition: 0.3s ease-in-out;
+    transform: translate(0, -15px);
+    filter: drop-shadow(10px 59px 17px #0008148f);
+}
+
+.Button {
+    transform: skewX(15deg) translate(0, 0);
+    box-shadow: inset 2px 2px 0 2px #f5f5f5,-2px 2px 0 2px #c0c0c0,-7px 7px 10px 2px #495057;
+}
+
+.Button:hover {
+    transition: 0.5s ease-in-out;
+    transform: skewx(15deg) translate(0, -5px);
+    color: #212529;
+    width: 22rem;
+    height: 3.5rem;
+    margin-bottom: 0.1rem;
+}
