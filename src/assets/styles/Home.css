@@ -10,6 +10,21 @@
     --color: #f8f9fa;
 }
 
+* {
+    --front-color-1: #212529;
+    --front-color-2: #343a40;
+    --front-color-3: #495057;
+    --front-color-4: #6c757d;
+
+    --background-color-1: #f8f9fa;
+    --background-color-2: #e9ecef;
+    --background-color-3: #dee2e6;
+    --background-color-4: #ced4da;
+
+    --mid-color: #adb5bd;
+
+}
+
 .Container {
     min-height: 100vh;
     position: relative;

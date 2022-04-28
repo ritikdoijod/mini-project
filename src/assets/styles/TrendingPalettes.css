@@ -1,0 +1,79 @@
+* {
+    --front-color-1: #212529;
+    --front-color-2: #343a40;
+    --front-color-3: #495057;
+    --front-color-4: #6c757d;
+
+    --background-color-1: #f8f9fa;
+    --background-color-2: #e9ecef;
+    --background-color-3: #dee2e6;
+    --background-color-4: #ced4da;
+
+    --mid-color: #adb5bd;
+    
+    --border-radius-1: 50px;
+    --border-radius-2: 30px;
+    --border-radius-3: 20px;
+    --border-radius-4: 10px;
+
+}
+
+:root {
+    background-color: var(--background-color-2);
+}
+
+.ColorsDivContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+}
+
+.ColorsDivSubContainers {
+    margin: 20px;
+    background-color: var(--background-color-1);
+    border-radius: var(--border-radius-3);
+    box-shadow: 4px 4px 4px var(--mid-color);
+}
+
+.ColorsDiv {
+    margin: 15px;
+    display: flex;
+    overflow: hidden;
+    border-radius: var(--border-radius-3);
+}
+
+.ColorDiv {
+    flex-grow: 1;
+    flex-basis: 1px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ColorDiv:hover {
+    flex-basis: 80px;
+}
+
+.ColorsDiv div span {
+    width: 100%;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    transition: all 0.1s ease-in-out 0s;
+    opacity: 0;
+    color: var(--background-color-1);
+    font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+.ColorsDiv div:hover span {
+    opacity: 1;
+}
+.ColorsInfoDiv {
+    text-align: left;
+    margin: 20px;
+    color: var(--front-color-4);
+}

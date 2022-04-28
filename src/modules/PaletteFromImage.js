@@ -2,24 +2,26 @@ import React, {useState} from "react";
 import { usePalette } from "react-palette";
 import "./../assets/styles/PaletteFromImage.css"
 import UploadImageIcon from "./../assets/images/ImageUpload.png";
+import ColorConverter from "./ColorConverter";
 
 function PaletteFromImage () {
-    const[imageFile, uploadImage] = useState("")
+
+    const [info, setInfo] = useState({imageFile: '', color: '#fff'});
 
     const imageHandler = (e) => {
         if(e.target.files.length !== 0) {
-            uploadImage(URL.createObjectURL(e.target.files[0]))
+            setInfo({imageFile: URL.createObjectURL(e.target.files[0]), color: '#fff'});
         }
     }
 
-    const {data, loading, error} = usePalette(imageFile);
+    const {data, loading, error} = usePalette(info.imageFile);
 
 
     return (
         <div className="PaletteFromImageContainer">
             <div className="SubContainer">
                 <div className="ImageView">
-                    <img src={imageFile} alt="" className="Image" />
+                    <img src={info.imageFile} alt="" className="Image" />
                 </div>
                 <div style={{fontsize: 18, marginTop: 25, marginBottom: 50}} >
                     {loading ? (
@@ -37,7 +39,6 @@ function PaletteFromImage () {
                                 <div>
                                     <label>or</label>
                                     <br></br>
-                                    {/* <input type="file" name="image-upload" id="inputImage" accept="image/*" onChange={imageHandler} /> */}
                                     <input type="file" className="InputFile" accept="image/*" onChange={imageHandler} />
                                 </div>
                             </div>
@@ -45,30 +46,11 @@ function PaletteFromImage () {
                     ) : (
                         <div>
                             <div className="ColorPalette" >
-                                <div>
-                                    <div className="Color1" style={{width: 85, height: 120, backgroundColor: data.darkVibrant}}></div>
-                                    <div className="ColorText"><label>{data.darkVibrant}</label></div>
-                                </div>
-                                <div>
-                                    <div className="Color2" style={{width: 85, height: 120, backgroundColor: data.darkMuted}}></div>
-                                    <div className="ColorText"><label>{data.darkMuted}</label></div>
-                                </div>
-                                <div>
-                                    <div className="Color3" style={{width: 85, height: 120, backgroundColor: data.vibrant}}></div>
-                                    <div className="ColorText"><label>{data.vibrant}</label></div>
-                                </div>
-                                <div>
-                                    <div className="Color4" style={{width: 85, height: 120, backgroundColor: data.muted}}></div>
-                                    <div className="ColorText"><label>{data.muted}</label></div>
-                                </div>
-                                <div>
-                                    <div className="Color5" style={{width: 85, height: 120, backgroundColor: data.lightMuted}}></div>
-                                    <div className="ColorText"><label>{data.lightMuted}</label></div>
-                                </div>
-                                <div>
-                                    <div className="Color6" style={{width: 85, height: 120, backgroundColor: data.lightVibrant}}></div>
-                                    <div className="ColorText"><label>{data.lightVibrant}</label></div>
-                                </div>
+                                {
+                                    Object.keys(data).map((key, i) => (
+                                        <div className="ColorDiv" style={{backgroundColor: data[key]}} onClick={() => setInfo({...info, color: data[key]})}></div>
+                                    ))
+                                }
                             </div>
                             <div className="UploadButton">
                                 <input type="file" className="InputFile" accept="image/*" onChange={imageHandler} />
@@ -78,7 +60,15 @@ function PaletteFromImage () {
                 </div>
             </div>
             <div className="RightSidebar" >
-                    
+                    <div className="ColorBox" style={{backgroundColor: info.color}}></div>
+                    <div className="ColorInfo" >
+                        <div className="hexColorField" >
+                            <label>{info.color}</label>
+                        </div>
+                        <br></br>
+                        <br></br>
+                        <ColorConverter color={info.color} />
+                    </div>
             </div>
         </div>
     )

@@ -1,14 +1,25 @@
-.RightSidebar {
-    position: absolute;
-    background-color: rgb(221, 221, 221);
-    width: 25%;
-    top: 0;
-    right: 0;
-    height: 100vh;
+* {
+    --front-color-1: #212529;
+    --front-color-2: #343a40;
+    --front-color-3: #495057;
+    --front-color-4: #6c757d;
+
+    --background-color-1: #f8f9fa;
+    --background-color-2: #e9ecef;
+    --background-color-3: #dee2e6;
+    --background-color-4: #ced4da;
+
+    --mid-color: #adb5bd;
+
+}
+
+.PaletteFromImageContainer {
+    background-color: var(--background-color-1);
 }
 
 .SubContainer {
     width: 75%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +30,7 @@
     width: 600px;
     height: 450px;
     margin: 0 auto;
-    border: 2px dashed #6c757d;
+    border: dashed 2px var(--mid-color);
     border-radius: 20px;
     align-items: center;
     justify-content: center;
@@ -35,15 +46,6 @@
     justify-content: center;
 }
 
-.ColorPalette {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    margin: 50px auto;
-    align-items: center;
-    justify-content: center;
-}
 
 .ColorText {
     font-size: 16px;
@@ -71,10 +73,66 @@
     width: 25rem;
 }
 
-.Color1 {
-    border-radius: 20px 0 0 20px;
+.ColorPalette {
+    position: relative;
+    display: flex;
+    width: 500px;
+    height: 110px;
+    margin: 50px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
 }
 
-.Color6 {
-    border-radius: 0 20px 20px 0;
+.ColorDiv {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.ColorDiv:hover {
+    flex-grow: 2;
+    transition: 0.4s;
+}
+
+/************** right-side-bar style ****************/
+
+.RightSidebar {
+    position: absolute;
+    background-color: var(--background-color-2);
+    width: 25%;
+    top: 0;
+    right: 0;
+    height: 100vh;
+}
+
+.RightSidebar .ColorBox {
+    margin: 30px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--mid-color);
+    border-radius: 20px;
+}
+
+.ColorInfo {
+    position: relative;
+    text-align: left;
+    padding: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+.RGBColorField {
+    background-color: var(--background-color-1);
+    padding: 10px;
+    border: 2px solid var(--mid-color);
+    border-radius: 10px;
+}
+
+.hexColorField {
+    background-color: var(--background-color-1);
+    padding: 10px;
+    border: 2px solid var(--mid-color);
+    border-radius: 10px;
 }
