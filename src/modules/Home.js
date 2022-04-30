@@ -10,9 +10,9 @@ function Home () {
 
     return(
         <div className="Container">
-            <div className="Header">
-                <label>Color Palette Application</label>
-            </div>
+            <header>
+                Color Palette Application
+            </header>
             <div className="DisplayBox">
 
 {/******************** navigation buttons ******************/}

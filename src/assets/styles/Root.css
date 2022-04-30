@@ -1,0 +1,29 @@
+:root {
+    --hue: 210;
+    --saturation: 10%;
+    --lightness: 90%;
+
+    --color-light: hsl(var(--hue), var(--saturation), var(--lightness));
+    --color-light-dark: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 5%));
+    --color-light-light: hsl(var(--hue), var(--saturation), calc(var(--lightness) + 5%));
+    --color-light-bright: hsl(var(--hue), var(--saturation), calc(var(--lightness) + 7%));
+    --color-light-transperant: hsla(var(--hue), var(--saturation), calc(var(--lightness) + 20%), 0.55);
+    --color-light-contrast: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 70%));
+    --color-light-dark-contrast: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 75%));
+    --color-light-contrast: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 70%));
+    --color-light-light-contrast: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 65%));
+    --text-color-light: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 35%));
+}
+
+* {
+    --accent-hue: 0;
+    --accent-saturation: 90%;
+    --accent-lightness: 95%;
+    --accent-color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness));
+    --shadow-light: 2px 2px 0px 1px hsl(var(--accent-hue), var(--accent-saturation), calc(var(--accent-lightness) + 5%));
+    --shadow-dark: 2px 2px 0px 1px hsl(var(--accent-hue), var(--accent-saturation), calc(var(--accent-lightness) - 5%));
+    --shadow-drop: 7px 7px 10px 1px hsl(var(--accent-hue), 10%, 30%);
+    --shadow-1: inset var(--shadow-light), var(--shadow-dark), var(--shadow-drop);
+    
+    --filter-1: drop-shadow(10px 25px 17px hsl(4, 0%, 30%)); 
+}

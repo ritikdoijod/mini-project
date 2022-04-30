@@ -1,138 +1,148 @@
-* {
-    --front-color-1: #212529;
-    --front-color-2: #343a40;
-    --front-color-3: #495057;
-    --front-color-4: #6c757d;
+@import "Root.css";
 
-    --background-color-1: #f8f9fa;
-    --background-color-2: #e9ecef;
-    --background-color-3: #dee2e6;
-    --background-color-4: #ced4da;
-
-    --mid-color: #adb5bd;
-
-}
-
-.PaletteFromImageContainer {
-    background-color: var(--background-color-1);
+.PageContainer {
+    display: flex;
 }
 
 .SubContainer {
-    width: 75%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex: 3;
+    background-color: var(--color-light-bright);
 }
 
 .UploadImageView {
-    width: 600px;
-    height: 450px;
-    margin: 0 auto;
-    border: dashed 2px var(--mid-color);
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.UploadImageView img {
-    width: 400px;
-    height: fit-content;
-}
-
-.ErrorMessage {
-    align-items: center;
-    justify-content: center;
-}
-
-
-.ColorText {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.ImageView {
     position: relative;
-    top: 50px;
-}
-  
-.ImageView img {
-    border-radius: 20px;
-}
-
-.InputFile {
-    width: 180px;
+    margin: 50px 200px;
+    border-radius: 30px;
+    border: 2px dashed var(--color-light-contrast);
+    padding: 20px;
 }
 
-.UploadButton {
-    margin: 30px;
+.UploadImageView input {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
 }
 
-.Image {
-    width: 25rem;
+.UploadImageIconView img {
+    width: 400px;
+}
+
+.UploadImageView:hover {
+    background-color: var(--accent-color);
 }
 
 .ColorPalette {
-    position: relative;
     display: flex;
-    width: 500px;
-    height: 110px;
-    margin: 50px auto;
+    margin: 0 400px;
+    transition: 0.25s;
     border-radius: 20px;
     overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    transition: 0.4s;
 }
 
 .ColorDiv {
     flex-grow: 1;
-    height: 100%;
+    flex-basis: 1px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
 }
 
 .ColorDiv:hover {
-    flex-grow: 2;
-    transition: 0.4s;
+    transition: 0.45s;
+    flex-basis: 80px;
 }
 
-/************** right-side-bar style ****************/
+.ColorDiv span {
+    width: 100%;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    transition: all 0.1s ease-in-out 0s;
+    opacity: 0;
+    color: var(--color-light);
+    font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+.ColorDiv:hover span {
+    opacity: 1;
+}
+
+.ImageView {
+    width: 450px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.ImageView img {
+    border-radius: 30px;
+    width: 450px;
+}
+
+.UploadButton {
+    position: relative;
+    --test: hsl(124, 18%, 31%);
+    background-color: hsl(124, 70%, 75%);
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+.UploadButton input {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.UploadButton:hover {
+    background-color: hsl(124, 50%, 60%);
+}
+
+/************ Right SideBar *******************/
+
+@keyframes animate-color {
+    from {width: 12%;}
+    to {width: 100%;}
+}
 
 .RightSidebar {
-    position: absolute;
-    background-color: var(--background-color-2);
-    width: 25%;
-    top: 0;
-    right: 0;
-    height: 100vh;
-}
-
-.RightSidebar .ColorBox {
-    margin: 30px;
-    width: 150px;
-    height: 150px;
-    border: 2px solid var(--mid-color);
-    border-radius: 20px;
-}
-
-.ColorInfo {
-    position: relative;
-    text-align: left;
+    flex: 1;
+    height: calc(100vh - 120px);
+    background-color: var(--color-light);
     padding: 30px;
+}
+
+.ColorBox {
+    height: 60px;
+    border-radius: 30px;
+    animation: animate-color 2s infinite ease;
+}
+
+
+.ColorCodeField {
+    padding: 10px;
+    margin: 30px auto;
     font-family: 'Courier New', Courier, monospace;
-    font-size: large;
-}
-
-.RGBColorField {
-    background-color: var(--background-color-1);
-    padding: 10px;
-    border: 2px solid var(--mid-color);
-    border-radius: 10px;
-}
-
-.hexColorField {
-    background-color: var(--background-color-1);
-    padding: 10px;
-    border: 2px solid var(--mid-color);
-    border-radius: 10px;
+    font-size: 18px;
+    text-align: left;
+    border: 2px solid var(--color-light-light-contrast);
+    border-radius: 8px;
+    background-color: var(--color-light-bright);
 }
