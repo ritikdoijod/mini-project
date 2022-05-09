@@ -89,7 +89,6 @@
 
 .UploadButton {
     position: relative;
-    --test: hsl(124, 18%, 31%);
     background-color: hsl(124, 70%, 75%);
     justify-content: center;
     align-items: center;
@@ -124,7 +123,7 @@
 
 .RightSidebar {
     flex: 1;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 108px);
     background-color: var(--color-light);
     padding: 30px;
 }

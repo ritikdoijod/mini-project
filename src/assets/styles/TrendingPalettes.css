@@ -1,16 +1,4 @@
-* {
-    --front-color-1: #212529;
-    --front-color-2: #343a40;
-    --front-color-3: #495057;
-    --front-color-4: #6c757d;
-
-    --background-color-1: #f8f9fa;
-    --background-color-2: #e9ecef;
-    --background-color-3: #dee2e6;
-    --background-color-4: #ced4da;
-
-    --mid-color: #adb5bd;
-    
+* { 
     --border-radius-1: 50px;
     --border-radius-2: 30px;
     --border-radius-3: 20px;
@@ -18,8 +6,10 @@
 
 }
 
+@import "Root.css";
+
 :root {
-    background-color: var(--background-color-2);
+    background-color: var(--color-light);
 }
 
 .ColorsDivContainer {
@@ -29,14 +19,16 @@
 }
 
 .ColorsDivSubContainers {
+    position: relative;
     margin: 20px;
-    background-color: var(--background-color-1);
+    padding: 15px;
+    background-color: var(--color-light-bright);
     border-radius: var(--border-radius-3);
-    box-shadow: 4px 4px 4px var(--mid-color);
+    box-shadow: 4px 4px 4px var(--text-color-light);
+    overflow: hidden;
 }
 
 .ColorsDiv {
-    margin: 15px;
     display: flex;
     overflow: hidden;
     border-radius: var(--border-radius-3);
@@ -45,13 +37,13 @@
 .ColorDiv {
     flex-grow: 1;
     flex-basis: 1px;
-    height: 150px;
+    height: 120px;
     overflow: hidden;
     position: relative;
 }
 
 .ColorDiv:hover {
-    flex-basis: 80px;
+    flex-basis: 120px;
 }
 
 .ColorsDiv div span {
@@ -63,7 +55,7 @@
     margin-top: -7px;
     transition: all 0.1s ease-in-out 0s;
     opacity: 0;
-    color: var(--background-color-1);
+    color: var(--color-light);
     font-weight: bold;
     font-size: large;
     text-transform: uppercase;
@@ -75,5 +67,59 @@
 .ColorsInfoDiv {
     text-align: left;
     margin: 20px;
-    color: var(--front-color-4);
+    color: var(--text-color-light);
+}
+
+/*********** tags ***********/
+
+.ColorTagsDiv {
+    font-size: 16px;
+    margin-top: 20px;
+    display: flex;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ColorTagsDiv div {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.tagDiv {
+    background-color: hsl(214, 100%, 88%);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.More {
+    position: absolute;
+    padding: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.More button {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: var(--color-light-bright);
+}
+
+ul {
+    position: relative;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+li {
+    line-height: 0.5;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }

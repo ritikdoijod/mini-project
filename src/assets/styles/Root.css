@@ -10,7 +10,6 @@
     --color-light-transperant: hsla(var(--hue), var(--saturation), calc(var(--lightness) + 20%), 0.55);
     --color-light-contrast: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 70%));
     --color-light-dark-contrast: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 75%));
-    --color-light-contrast: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 70%));
     --color-light-light-contrast: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 65%));
     --text-color-light: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 35%));
 }

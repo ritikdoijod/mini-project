@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./../App.css"
-import "./../assets/styles/Home.css"
-import PaletteImage from "./../assets/images/ColorPalette.png"
+import "./../App.css";
+import "./../assets/styles/Home.css";
+import PaletteImage from "./../assets/images/ColorPalette.png";
 
 function Home () {
 
@@ -18,7 +18,7 @@ function Home () {
 {/******************** navigation buttons ******************/}
 
                 <div className="PaletteImage">
-                    <img src={PaletteImage} />
+                    <img src={PaletteImage} alt="" />
                 </div>
                 <div className="PaletteShadow">
                 </div>
@@ -27,7 +27,6 @@ function Home () {
                     <button className="Button" onClick={() => navigate("/palettefromimage")}>Generate Color Palette From Image</button>
                     <button className="Button" onClick={() => navigate("/palettefromcolors")}>Generate Color Palette From Colors</button>
                 </div>
-                
 
             </div>
         </div>

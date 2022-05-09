@@ -4,7 +4,6 @@ import "./../assets/styles/PaletteFromImage.css"
 import UploadImageIcon from "./../assets/images/ImageUpload.png";
 import { hexToHSL } from "./HexToHSLConverter";
 import { hexToRGB } from "./HexToRGBConverter";
-import { calculateNewValue } from "@testing-library/user-event/dist/utils";
 
 function PaletteFromImage () {
 
@@ -38,7 +37,7 @@ function PaletteFromImage () {
                             <div className="ErrorMessage">
                                 <div className="UploadImageView">
                                     <div className="UploadImageIconView">
-                                        <img src={UploadImageIcon} />
+                                        <img src={UploadImageIcon} alt="" />
                                         <div>
                                             <h1>Upload Image</h1>
                                             <label>Drag Image Here <b>OR</b> Click to Upload</label>
@@ -67,18 +66,18 @@ function PaletteFromImage () {
                     </div>
                 </div>
                 <div className="RightSidebar">
-                        <div className="ColorBox" style={{backgroundColor: info.color}}></div>
-                        <div className="ColorInfo" >
+                    <div className="ColorBox" style={{backgroundColor: info.color}}></div>
+                    <div className="ColorInfo" >
                         <div className='ColorCodeField'>
-                                <label>{hexToHSL(info.color)}</label>
-                            </div>
-                            <div className="ColorCodeField" >
-                                <label>{info.color.toUpperCase()}</label>
-                            </div>
-                            <div className='ColorCodeField'>
-                                <label>{hexToRGB(info.color)}</label>
-                            </div>
+                            <label>{hexToHSL(info.color)}</label>
                         </div>
+                        <div className="ColorCodeField" >
+                            <label>{info.color.toUpperCase()}</label>
+                        </div>
+                        <div className='ColorCodeField'>
+                            <label>{hexToRGB(info.color)}</label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
