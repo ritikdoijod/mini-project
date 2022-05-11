@@ -28,7 +28,7 @@
 }
 
 .UploadImageIconView img {
-    width: 400px;
+    width: 350px;
 }
 
 .UploadImageView:hover {
@@ -37,18 +37,10 @@
 
 .ColorPalette {
     display: flex;
-    margin: 0 400px;
+    margin: auto 400px;
     transition: 0.25s;
     border-radius: 20px;
     overflow: hidden;
-}
-
-.ColorDiv {
-    flex-grow: 1;
-    flex-basis: 1px;
-    height: 150px;
-    overflow: hidden;
-    position: relative;
 }
 
 .ColorDiv:hover {
@@ -112,36 +104,4 @@
 
 .UploadButton:hover {
     background-color: hsl(124, 50%, 60%);
-}
-
-/************ Right SideBar *******************/
-
-@keyframes animate-color {
-    from {width: 12%;}
-    to {width: 100%;}
-}
-
-.RightSidebar {
-    flex: 1;
-    height: calc(100vh - 108px);
-    background-color: var(--color-light);
-    padding: 30px;
-}
-
-.ColorBox {
-    height: 60px;
-    border-radius: 30px;
-    animation: animate-color 2s infinite ease;
-}
-
-
-.ColorCodeField {
-    padding: 10px;
-    margin: 30px auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
-    text-align: left;
-    border: 2px solid var(--color-light-light-contrast);
-    border-radius: 8px;
-    background-color: var(--color-light-bright);
 }

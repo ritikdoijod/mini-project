@@ -1,0 +1,50 @@
+
+@keyframes animate-color {
+    from {width: 12%;}
+    to {width: 100%;}
+}
+
+.RightSidebar {
+    flex: 1;
+    height: calc(100vh - 108px);
+    background-color: var(--color-light);
+    padding: 30px;
+}
+
+.ColorBox {
+    height: 60px;
+    border-radius: 30px;
+    animation: animate-color 2s infinite ease;
+}
+
+
+.ColorCodeField {
+    margin: 30px auto;
+    padding: 0;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    text-align: left;
+    border: 2px solid var(--color-light-light-contrast);
+    border-radius: 8px;
+    background-color: var(--color-light-bright);
+    position: relative;
+}
+
+.ColorLabel {
+    padding: 10px;
+}
+
+.CopyButton {
+    margin: 0;
+    padding: 7px;
+    right: 0;
+    border: none;
+    position: absolute;
+    background: none;
+    border-left: 1px solid var(--color-light-light-contrast);
+}
+
+.CopyButton img {
+    width: 25px;
+}

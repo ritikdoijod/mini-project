@@ -14,7 +14,8 @@
 
 .ColorsDivContainer {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;
 }
 
@@ -37,7 +38,7 @@
 .ColorDiv {
     flex-grow: 1;
     flex-basis: 1px;
-    height: 120px;
+    height: 170px;
     overflow: hidden;
     position: relative;
 }

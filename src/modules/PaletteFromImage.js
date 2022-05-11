@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { usePalette } from "react-palette";
 import "./../assets/styles/PaletteFromImage.css"
+import "./../assets/styles/RightSideBar.css";
 import UploadImageIcon from "./../assets/images/ImageUpload.png";
-import { hexToHSL } from "./HexToHSLConverter";
-import { hexToRGB } from "./HexToRGBConverter";
+import RightSideBar from "./RightSideBar";
 
 function PaletteFromImage () {
 
@@ -66,18 +66,7 @@ function PaletteFromImage () {
                     </div>
                 </div>
                 <div className="RightSidebar">
-                    <div className="ColorBox" style={{backgroundColor: info.color}}></div>
-                    <div className="ColorInfo" >
-                        <div className='ColorCodeField'>
-                            <label>{hexToHSL(info.color)}</label>
-                        </div>
-                        <div className="ColorCodeField" >
-                            <label>{info.color.toUpperCase()}</label>
-                        </div>
-                        <div className='ColorCodeField'>
-                            <label>{hexToRGB(info.color)}</label>
-                        </div>
-                    </div>
+                    <RightSideBar clickedColor={info.color} />
                 </div>
             </div>
         </div>

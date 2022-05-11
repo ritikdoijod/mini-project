@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { hexToHSL } from './HexToHSLConverter';
 import { hexToRGB } from './HexToRGBConverter';
+import RightSideBar from './RightSideBar';
 import "./../assets/styles/PaletteInfo.css";
 
 const PaletteInfo = () => {
@@ -28,19 +29,7 @@ const PaletteInfo = () => {
                     </div>
                 </div>
                 <div className='RightSidebar' >
-                    <div className="ColorBox" style={{backgroundColor: infoColor}}>
-                    </div>
-                    <div className="ColorInfo" >
-                    <div className='ColorCodeField'>
-                            <label>{hexToHSL(infoColor)}</label>
-                        </div>
-                        <div className="ColorCodeField" >
-                            <label>{infoColor.toUpperCase()}</label>
-                        </div>
-                        <div className='ColorCodeField'>
-                            <label>{hexToRGB(infoColor)}</label>
-                        </div>
-                    </div>
+                    <RightSideBar clickedColor={infoColor} />
                 </div>
             </div>
         </div>

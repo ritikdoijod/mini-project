@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { hexToHSL } from "./HexToHSLConverter";
 import { hexToRGB } from "./HexToRGBConverter";
 import "./../assets/styles/PaletteFromColors.css"
+import RightSideBar from "./RightSideBar";
 
 const PaletteFromColors = () => {
     const [addColor, setAddColor] = useState("#ffffff");
@@ -18,7 +19,7 @@ const PaletteFromColors = () => {
     }
 
     const removeHandler = (c) => {
-        const newColor = colors.filter(item => item != c);
+        const newColor = colors.filter(item => item !== c);
         setColors(newColor);
     }
 
@@ -29,11 +30,13 @@ const PaletteFromColors = () => {
             </header>
             <div className="PageContainer">
                 <div className="SubContainer contents" >
-                    <div className="ColorInputWrapper">
-                        <input type="color" id="colorInput" value={addColor} onChange={colorInputHandler} />
-                    </div>
-                    <div>
-                        <button onClick={addClickHandler}>ADD</button>
+                    <div className="ColorAddDiv">
+                        <div className="ColorInputWrapper float-left">
+                            <input type="color" id="colorInput" value={addColor} onChange={colorInputHandler} />
+                        </div>
+                        <div className="AddButtonDiv float-left">
+                            <button onClick={addClickHandler}>ADD</button>
+                        </div>
                     </div>
                     <div className="ColorPalette style1">
                         {
@@ -53,18 +56,7 @@ const PaletteFromColors = () => {
                     </div>
                 </div>
                 <div className="RightSidebar">
-                    <div className="ColorBox" style={{backgroundColor: infoColor}}></div>
-                    <div className="ColorInfo" >
-                    <div className='ColorCodeField'>
-                            <label>{hexToHSL(infoColor)}</label>
-                        </div>
-                        <div className="ColorCodeField" >
-                            <label>{infoColor.toUpperCase()}</label>
-                        </div>
-                        <div className='ColorCodeField'>
-                            <label>{hexToRGB(infoColor)}</label>
-                        </div>
-                    </div>
+                    <RightSideBar clickedColor={infoColor} />
                 </div>
             </div>
         </div>
