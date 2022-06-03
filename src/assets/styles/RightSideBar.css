@@ -48,3 +48,37 @@
 .CopyButton img {
     width: 25px;
 }
+
+.CopyButton:active {
+    background: var(--color-light-light-contrast);
+}
+
+.CopyButton::before {
+    content: "Copied";
+    position: absolute;
+    top: -32px;
+    right: -10px;
+    background: var(--color-light-light-contrast);
+    color: var(--color-light);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: none;
+}
+
+.CopyButton::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-light-light-contrast);
+    transform: rotate(45deg);
+    display: none;
+}
+
+.ColorCodeField:active .CopyButton::before,
+.ColorCodeField:active .CopyButton::after {
+    display: block;
+}

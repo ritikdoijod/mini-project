@@ -46,7 +46,7 @@ const PaletteFromColors = () => {
                                         <button type="button" className="RemoveColorButton" onClick={() => removeHandler(c)}>
                                             X
                                         </button>
-                                        <div className="abc" onClick={() => setInfoColor(c)} >
+                                        <div key={i} className="abc" onClick={() => setInfoColor(c)} >
                                         </div>
                                         <span>{c}</span>
                                     </div>
